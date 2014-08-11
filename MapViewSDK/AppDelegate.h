@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <ArcGIS/ArcGIS.h>
+#import "OfflineCacheJsonDelegate.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,AGSMapViewLayerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,AGSMapViewLayerDelegate>{
+    OfflineCacheJsonDelegate* dd;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
