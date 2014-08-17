@@ -43,18 +43,34 @@
         dd=[[OfflineCacheJsonDelegate alloc] init];
         [dd ddddd:JSON];
     }else{
-        NSURL *url = [NSURL URLWithString:kTiledMapServiceURL_test];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+//        NSURL *url = [NSURL URLWithString:kTiledMapServiceURL_test];
+//        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+//            NSLog(@"App.net Global Stream: %@", JSON);
+//            [[NSUserDefaults standardUserDefaults] setObject:JSON forKey:@"mapServiceJson"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//            
+//            dd=[[OfflineCacheJsonDelegate alloc] init];
+//            [dd ddddd:JSON];
+//            
+//        } failure:nil];
+//        [operation start];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        manager.requestSerializer=[AFJSONRequestSerializer serializer];
+        [manager GET:kTiledMapServiceURL_test parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@", responseObject);
             NSLog(@"App.net Global Stream: %@", JSON);
-            [[NSUserDefaults standardUserDefaults] setObject:JSON forKey:@"mapServiceJson"];
+            [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:@"mapServiceJson"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
             dd=[[OfflineCacheJsonDelegate alloc] init];
             [dd ddddd:JSON];
-            
-        } failure:nil];
-        [operation start];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+            NSLog(@"Error: %@", error);
+        }
+         ];
     }
     
 
