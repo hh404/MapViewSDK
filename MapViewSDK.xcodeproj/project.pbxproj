@@ -17,6 +17,8 @@
 		7E1C046C19A1036F001082CC /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C046019A1036F001082CC /* AFURLResponseSerialization.m */; };
 		7E1C046D19A1036F001082CC /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C046219A1036F001082CC /* AFURLSessionManager.m */; };
 		7E1C046E19A1036F001082CC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C046419A1036F001082CC /* Reachability.m */; };
+		7E1C047519A19F75001082CC /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C047319A19F75001082CC /* HttpRequestManager.m */; };
+		7E1C047919A1A126001082CC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C047819A1A126001082CC /* MapViewController.m */; };
 		BD1EF0021994D532005E670C /* OfflineCacheJsonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1EF0011994D532005E670C /* OfflineCacheJsonDelegate.m */; };
 		BD1EF0081994D6CB005E670C /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = BD1EF0041994D6CB005E670C /* CHANGELOG.md */; };
 		BD1EF0091994D6CB005E670C /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1EF0061994D6CB005E670C /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -86,6 +88,10 @@
 		7E1C046219A1036F001082CC /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		7E1C046319A1036F001082CC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		7E1C046419A1036F001082CC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7E1C047219A19F75001082CC /* HttpRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
+		7E1C047319A19F75001082CC /* HttpRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
+		7E1C047719A1A126001082CC /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7E1C047819A1A126001082CC /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		BD1EF0001994D532005E670C /* OfflineCacheJsonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineCacheJsonDelegate.h; sourceTree = "<group>"; };
 		BD1EF0011994D532005E670C /* OfflineCacheJsonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineCacheJsonDelegate.m; sourceTree = "<group>"; };
 		BD1EF0041994D6CB005E670C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -201,6 +207,24 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		7E1C046F19A19F75001082CC /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				7E1C047219A19F75001082CC /* HttpRequestManager.h */,
+				7E1C047319A19F75001082CC /* HttpRequestManager.m */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		7E1C047619A1A126001082CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E1C047719A1A126001082CC /* MapViewController.h */,
+				7E1C047819A1A126001082CC /* MapViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		BD1EF0031994D6CB005E670C /* JSONKit-master */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +310,8 @@
 		BDC95593198F9B480056A557 /* MapViewSDK */ = {
 			isa = PBXGroup;
 			children = (
+				7E1C047619A1A126001082CC /* Controllers */,
+				7E1C046F19A19F75001082CC /* HttpRequest */,
 				7E1C044F19A1036F001082CC /* AFNetworking */,
 				BD21877B1995E2EA00C6C515 /* SDWebImage */,
 				BD1EF0031994D6CB005E670C /* JSONKit-master */,
@@ -452,10 +478,12 @@
 				7E1C046919A1036F001082CC /* AFSecurityPolicy.m in Sources */,
 				7E1C046D19A1036F001082CC /* AFURLSessionManager.m in Sources */,
 				BDC9559A198F9B480056A557 /* main.m in Sources */,
+				7E1C047919A1A126001082CC /* MapViewController.m in Sources */,
 				BD2187AB1995E2EA00C6C515 /* UIImageView+WebCache.m in Sources */,
 				7E1C046719A1036F001082CC /* AFHTTPSessionManager.m in Sources */,
 				BD2187AA1995E2EA00C6C515 /* UIImageView+HighlightedWebCache.m in Sources */,
 				7E1C046819A1036F001082CC /* AFNetworkReachabilityManager.m in Sources */,
+				7E1C047519A19F75001082CC /* HttpRequestManager.m in Sources */,
 				BD2187A21995E2EA00C6C515 /* SDWebImageDownloader.m in Sources */,
 				7E1C046619A1036F001082CC /* AFHTTPRequestOperationManager.m in Sources */,
 				7E1C046B19A1036F001082CC /* AFURLRequestSerialization.m in Sources */,

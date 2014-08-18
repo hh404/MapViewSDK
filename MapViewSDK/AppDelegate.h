@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ArcGIS/ArcGIS.h>
 #import "OfflineCacheJsonDelegate.h"
-
+#import "MapViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,AGSMapViewLayerDelegate>{
     OfflineCacheJsonDelegate* dd;
@@ -19,5 +19,6 @@
 
 @property (nonatomic, strong) AGSMapView *mapView;
 
+@property(nonatomic, strong)  MapViewController *mapController;
 
 @end

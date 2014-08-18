@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "AFNetworking.h"
 #import "OfflineTiledLayer.h"
 
 
@@ -33,6 +32,8 @@
     self.mapView.gridLineColor=[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
     self.mapView.backgroundColor=[UIColor whiteColor];
 
+//    self.mapController = [[MapViewController alloc] init];
+//    self.window.rootViewController = self.mapController;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lodview) name:@"lodview" object:nil];
     
